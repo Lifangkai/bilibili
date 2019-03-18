@@ -1,0 +1,42 @@
+/* components/MyTitle/MyTitle.wxss */
+
+.my_title {
+    height: 50rpx;
+}
+
+.logo,
+.search_icon,
+.user_icon,
+.down_app {
+    float: left;
+}
+
+.right_box {
+    float: right;
+    margin-top: 15rpx;
+    margin-right: 10rpx;
+}
+
+.search_img,
+.user_img {
+    width: 70rpx;
+}
+
+.logo_img {
+    width: 180rpx;
+}
+
+.user_icon {
+    margin: 0 15rpx;
+}
+
+.down {
+    background: pink;
+    font-size: 24rpx;
+    width: 200rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    color: #fff;
+    border-radius: 10rpx;
+}

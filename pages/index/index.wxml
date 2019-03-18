@@ -1,0 +1,46 @@
+<view class="main">
+<!-- 公共头部 -->
+<MyTitle></MyTitle>
+<!-- 首页导航 -->
+<view class="nav_wrap">
+<scroll-view class="nav" scroll-x>
+        <view bindtap="activeNav" data-index="{{index}}" class="nav_item {{index===currentIndexNav?'active':''}}" wx:for="{{ navList }}" wx:key="{{ index }}">{{ item.text }}</view>
+</scroll-view>
+</view>
+<!-- 首页轮播图 -->
+<view class="slides">
+    <swiper indicator-dots indicator-color="rgba(255,255,255,.3)" autoplay interval="4000" duration="1000"  circular>
+        <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}">
+            <navigator url="" hover-class="navigator-hover" open-type="navigate">
+            <image src="{{item.imgSrc}}" mode="widthFix">
+            </image>    
+            </navigator>
+        </swiper-item>
+    </swiper>
+</view>
+<!-- 视频列表 -->
+<view class="video_wrap">
+    <navigator url="../detail/detail?id={{ item.id }}" class="video_item"  open-type="navigate" wx:for="{{ videoList }}" wx:key="{{ index }}">
+     <view class="video_img">
+        <!-- 图片 -->
+        <image  src="{{item.imgSrc}}" mode="widthFix" lazy-load="true">
+        </image> <!-- 播放量。。。 -->
+        <view class="video_info">
+            <!-- 播放量 -->
+            <view class="play_count">
+             <image src="../../icons/watch.png" style="width:35rpx;height:35rpx">
+             </image>{{item.playCount}}
+            </view>
+            <!-- 评论量 -->
+            <view class="comment_count">
+             <image src="../../icons/commit.png" style="width:35rpx;height:35rpx">
+             </image>{{item.commentCount}}
+            </view>
+        </view>
+        <!-- 标题 -->
+    <view class="video_title">{{item.desc}}</view>
+    </view>
+    </navigator>
+    
+</view>
+</view> 

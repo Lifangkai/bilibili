@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "bilibili",
+  "usingComponents": {
+    "MyTitle":"../../components/MyTitle/MyTitle"
+  }
+}

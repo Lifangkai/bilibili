@@ -1,0 +1,76 @@
+<view class="main">
+<!-- 公共头部 -->
+<MyTitle></MyTitle>
+<!-- 视频详情 -->
+<view class="video_info">
+    <!-- 视频标签 -->
+    <video src="{{ videoInfo.videoSrc }}" controls >
+    </video>
+    <!-- 视频标题 -->
+    <view class="video_title">
+        {{ videoInfo.videoTitle }}
+    </view>
+    <!-- 视频作者... -->
+    <view class="video_detail">
+        <text class="author">
+         {{ videoInfo.author }}   
+        </text>
+        <text class="play_count">
+        {{ videoInfo.playCount }}播放 
+        </text>
+        <text class="comment_count">
+          {{ videoInfo.commentCount }}条弹幕 
+        </text>
+        <text class="date">
+          {{ videoInfo.data }}  
+        </text>
+    </view>
+</view>
+<!-- 其他视频 -->
+<view class="video_other">
+<navigator url="./detail?id={{ item.id }}" hover-class="navigator-hover" open-type="navigate" wx:for="{{ othersList }}" wx:key="{{ index }}">
+  <view class="other_wrap">
+    <!-- 图片 -->
+    <image src="{{ item.imgSrc }}" mode="widthFix">
+      
+    </image>
+    <!-- 标题容器 -->
+    <view class="title_wrap">
+    <!-- 标题 -->
+    <view class="other_title">{{ item.title }}</view>
+    <!-- 细节 -->
+    <view class="other_detail">
+    <!-- 观看 -->
+    <text class="play">{{ item.playMsg }}</text>
+    <!-- 弹幕 -->
+    <text class="count">{{ item.commentCount }}</text>
+    </view>
+    </view>
+  </view>
+</navigator>
+</view>
+<!-- 评论模块 -->
+<text class="comment_title">
+评论({{ commentsCount }}) 
+</text>
+<!-- 用户详情 -->
+<view class="comment_wrap">
+<view class="comment_item" wx:for="{{  commentsList }}" wx:key="{{ index }}">
+<!-- 用户头像 -->
+<navigator url="" hover-class="navigator-hover" open-type="navigate">
+  <image src="{{ item.userIconSrc }}" mode="widthFix">
+</image>
+</navigator>
+<!-- 评论内容 -->
+<view class="userInfo_wrap">
+  <!-- 名字，日期 -->
+  <view class="user_wrap">
+  <text class="userName">{{ item.username }}</text>
+  <text class="userDate">{{ item.commentDate }}</text>
+  </view>
+  <!-- 内容 -->
+  <view class="userInfo">{{ item.commentInfo }}</view>
+</view>
+</view>
+</view>
+</view>
